@@ -1,15 +1,22 @@
 import './App.css';
-import Login from './component/login/Login';
-import MenuBar from './component/menuBar/MenuBar';
-import Sugar from './img/sugar.jpg';
+// import Login from './component/login/Login';
+// import MenuBar from './component/menuBar/MenuBar';
+// import Sugar from './img/sugar.jpg';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import CreateAccount from './container/createAccount/CreateAccount';
+import Home from './container/home/Home';
 
 function App() {
   return (
-    <div className="App" style={{ backgroundImage:`url(${Sugar})` }}>
-      <header className="App-header">
-        <MenuBar />
-        <Login />
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/'>
+            <Route index element={<Home />} />
+            <Route path='createaccount' element={<CreateAccount />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
