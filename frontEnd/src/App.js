@@ -1,7 +1,4 @@
 import './App.css';
-// import Login from './component/login/Login';
-// import MenuBar from './component/menuBar/MenuBar';
-// import Sugar from './img/sugar.jpg';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CreateAccount from './container/createAccount/CreateAccount';
 import Home from './container/home/Home';

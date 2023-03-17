@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
-    <section class=" ">
-      <div class="container-fluid h-custom row d-flex justify-content-center align-items-center h-100 ">
+    <section class="">
+      <div class="container-fluid h-custom row d-flex justify-content-center align-items-center h-100">
         <form class="bg-light m-4 p-3 rounded shadow" action="" method="post" onsubmit="" id="">
           <div class="form-outline mb-2">
             <input type="email" id="" class="form-control form-control-lg" placeholder="Phone Number" />

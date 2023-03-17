@@ -6,7 +6,7 @@ import Sugar from '../../img/sugar.jpg';
 class Home extends Component {
     render() {
         return (
-            <div className="App" style={{ backgroundImage: `url(${Sugar})` }}>
+            <div class="App">
                 <header className="App-header">
                     <MenuBar />
                     <Login />
