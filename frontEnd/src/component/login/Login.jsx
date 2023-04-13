@@ -4,12 +4,17 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [passcode, setPasscode] = useState('');
+  const [inputs, setInputs] = useState({});
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs(values => ({...values, [name]: value}))
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`The email you entered was: ${email}`)
+    alert(inputs);
   }
 
   return (
@@ -19,8 +24,8 @@ const Login = () => {
           <div class="form-outline mb-2">
             <input
               type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={inputs.email || ''}
+              onChange={handleChange}
               class="form-control form-control-lg"
               placeholder="Email Address"
             />
@@ -28,8 +33,8 @@ const Login = () => {
           <div class="form-outline mb-4">
             <input
               type="password"
-              value={passcode}
-              onChange={(e) => setPasscode(e.target.value)}
+              value={inputs.passcode || ''}
+              onChange={handleChange}
               class="form-control form-control-lg"
               placeholder="Passcode"
             />

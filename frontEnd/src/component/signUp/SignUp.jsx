@@ -2,14 +2,17 @@ import React from 'react';
 import { useState } from 'react';
 
 const SignUp = () => {
-    const [companyName, setCompanyName] = useState('');
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [farmAddress, setFarmAddress] = useState('');
+    const [inputs, setInputs] = useState({});
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setInputs(values => ({...values, [name]: value}))
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(`The email you entered was: ${email}`)
+        alert(inputs);
     }
 
     return (
@@ -24,8 +27,8 @@ const SignUp = () => {
                     <input
                         type="text"
                         class="form-control"
-                        value={companyName}
-                        onChange={(e) => setCompanyName(e.target.value)}
+                        value={inputs.companyName || ''}
+                        onChange={handleChange}
                     />
                 </div>
                 <div class="input-group input-group-sm mt-3 ">
@@ -35,8 +38,8 @@ const SignUp = () => {
                     <input
                         type="text"
                         class="form-control"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        value={inputs.name || ''}
+                        onChange={handleChange}
                     />
                 </div>
                 <div class="input-group input-group-sm mt-3 ">
@@ -46,8 +49,8 @@ const SignUp = () => {
                     <input
                         type="text"
                         class="form-control"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={inputs.email || ''}
+                        onChange={handleChange}
                     />
                 </div>
                 <div class="input-group input-group-sm mt-3 ">
@@ -57,8 +60,8 @@ const SignUp = () => {
                     <input
                         type="text"
                         class="form-control"
-                        value={farmAddress}
-                        onChange={(e) => setFarmAddress(e.target.value)}
+                        value={inputs.farmAddress || ''}
+                        onChange={handleChange}
                     />
                     <small class="">Add your primary farm address, you can add more farms after sign up</small>
 
